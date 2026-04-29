@@ -1,2 +1,37 @@
+# Existing
 .claude/settings.local.json
 .DS_Store
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+!.env.*.template
+*.pem
+*.key
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+credentials*
+secrets*
+*.p12
+*.pfx
+*-sa.json
+*.credentials.json
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+
+# Build / install — uncomment after stack is chosen
+# node_modules/
+# .next/
+# dist/
+# build/
+# .turbo/
+# coverage/
+# __pycache__/
+# .venv/
