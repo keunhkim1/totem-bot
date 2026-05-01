@@ -2,7 +2,7 @@
 
 토스 디자인 언어를 흡수한 챗봇/미니앱 프로젝트의 디자인 시스템 가이드 저장소.
 
-> Status: early (스캐폴딩 진행 중). Last updated: 2026-05-01.
+> Status: live (https://totem-bot.vercel.app · @kh_totem_bot). Last updated: 2026-05-01.
 
 ## What this is
 
@@ -44,11 +44,16 @@ ls docs/design-system/    # 8개 가이드 파일
 - 출처: TDS(`@toss/tds-react-native`) Foundation + 미니앱 브랜딩 가이드
 - 정책: 패키지 미설치, 토큰 값과 사용 원칙만 차용. 토스 종속 자산(로고/SDK)은 제외.
 
+## Commands
+
+- `/start` — 환영 메시지 + 명령어 안내
+- `/recent` — DART 최근 7일 공시 5건
+
 ## What's not here yet
 
-- 첫 컴포넌트, 라우팅, 실제 페이지
-- grammY 통합 코드, DART 클라이언트
-- CI / 배포 파이프라인
+- 컴포넌트·페이지(루트 `/`만 placeholder)
+- 추가 명령어 (`/today`, `/company <기업명>` 등 — 추후 선정)
+- 디자인 토큰을 Next.js로 이식하는 스타일 시스템
 
 ## More docs
 

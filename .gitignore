@@ -33,6 +33,7 @@ dist/
 build/
 coverage/
 *.tsbuildinfo
+next-env.d.ts
 
 # Vercel
 .vercel/

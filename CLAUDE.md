@@ -4,8 +4,10 @@
 
 ## Status
 
-- 단계: early. 코드 0줄(스캐폴딩 진행 중), 디자인 시스템 문서 8종 + 작성 계획서 1건.
-- 스택: TypeScript / pnpm workspace 모노레포 / Next.js App Router 단일 앱 / Vercel Functions Node.js + grammY (텔레그램 webhook).
+- 단계: 첫 명령어(/start, /recent) 라이브. 디자인 시스템 문서 8종 + 작성 계획서 1건 별도.
+- 스택: TypeScript / pnpm workspace 모노레포 / Next.js App Router 단일 앱(`apps/web`) / Vercel Functions Node.js + grammY.
+- 배포: https://totem-bot.vercel.app (Vercel 프로젝트 `totem-bot`, GitHub `keunhkim1/totem-bot` main 자동 배포).
+- 텔레그램 봇: @kh_totem_bot. webhook은 `https://totem-bot.vercel.app/api/telegram`.
 - 비상업용. Vercel Hobby 한정.
 - 마지막 업데이트: 2026-05-01.
 
@@ -52,6 +54,8 @@ totem-bot/
 - **스택 (2026-05-01 결정)** — TS only, pnpm workspace, Next.js App Router 단일 앱(`apps/web`), 텔레그램 webhook은 `app/api/telegram/route.ts` + grammY, Vercel Functions Node.js 런타임. DB는 도입 시점에 워크로드별 분기(캐시 Upstash Redis / 구조화 Neon, 둘 다 Vercel Marketplace).
 - **비상업용 전제** — Vercel Hobby 약관 한정. 광고·유료 기능 등 상업화 변경 요청 시 전제 재확인 필수.
 - **제외된 후보** (재논쟁 금지) — Cloudflare D1(Workers 종속), Vercel Postgres/KV(2024-12 단종, Marketplace로 이관), telegraf(릴리스 정체), Turborepo/Nx(소규모 과잉), TS+Python 혼용(이중 빌드 부담).
+- **Vercel monorepo 설정** — 프로젝트 `rootDirectory=apps/web`, `framework=nextjs` 강제 필요. `vercel link`를 `apps/web`에서 실행하면 분리된 새 프로젝트가 생기므로 **항상 repo 루트에서 link**한다.
+- **봇 명령어 확장** — 추후 선정. 현재 명령어는 `/start`, `/recent`만.
 
 ## Change type → file matrix
 
