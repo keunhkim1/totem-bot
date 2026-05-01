@@ -4,9 +4,10 @@
 
 ## Status
 
-- 단계: early. 코드 0줄, 디자인 시스템 문서 8종 + 작성 계획서 1건.
-- 스택: 미정 (Next.js / React Native / 그 외).
-- 마지막 업데이트: 2026-04-29.
+- 단계: early. 코드 0줄(스캐폴딩 진행 중), 디자인 시스템 문서 8종 + 작성 계획서 1건.
+- 스택: TypeScript / pnpm workspace 모노레포 / Next.js App Router 단일 앱 / Vercel Functions Node.js + grammY (텔레그램 webhook).
+- 비상업용. Vercel Hobby 한정.
+- 마지막 업데이트: 2026-05-01.
 
 ## Never do
 
@@ -48,6 +49,9 @@ totem-bot/
 - **TDS 패키지 미설치** — 가이드 문서로만 흡수. 출처: `docs/design-system/README.md:5`.
 - **토스 종속 자산 제외** — 로고/SDK/플로팅 탭바 등. 출처: `docs/design-system/README.md:13`.
 - **추출 기준일** — 2026-04-29.
+- **스택 (2026-05-01 결정)** — TS only, pnpm workspace, Next.js App Router 단일 앱(`apps/web`), 텔레그램 webhook은 `app/api/telegram/route.ts` + grammY, Vercel Functions Node.js 런타임. DB는 도입 시점에 워크로드별 분기(캐시 Upstash Redis / 구조화 Neon, 둘 다 Vercel Marketplace).
+- **비상업용 전제** — Vercel Hobby 약관 한정. 광고·유료 기능 등 상업화 변경 요청 시 전제 재확인 필수.
+- **제외된 후보** (재논쟁 금지) — Cloudflare D1(Workers 종속), Vercel Postgres/KV(2024-12 단종, Marketplace로 이관), telegraf(릴리스 정체), Turborepo/Nx(소규모 과잉), TS+Python 혼용(이중 빌드 부담).
 
 ## Change type → file matrix
 

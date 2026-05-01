@@ -26,12 +26,13 @@ secrets*
 *.swp
 Thumbs.db
 
-# Build / install — uncomment after stack is chosen
-# node_modules/
-# .next/
-# dist/
-# build/
-# .turbo/
-# coverage/
-# __pycache__/
-# .venv/
+# Build / install
+node_modules/
+.next/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Vercel
+.vercel/

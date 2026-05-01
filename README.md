@@ -2,11 +2,20 @@
 
 토스 디자인 언어를 흡수한 챗봇/미니앱 프로젝트의 디자인 시스템 가이드 저장소.
 
-> Status: early. Last updated: 2026-04-29.
+> Status: early (스캐폴딩 진행 중). Last updated: 2026-05-01.
 
 ## What this is
 
-토스 디자인 언어(Typography, Colors, Brand 원칙)를 패키지 설치 없이 **가이드 문서로 흡수**한 저장소. 현재는 디자인 시스템 문서만 있으며 애플리케이션 코드는 아직 없다. 다음 단계는 스택 결정과 첫 화면 구현.
+DART API 등 한국 금융 공시 API를 소비하는 **텔레그램 봇 + 웹앱**. 한국 사용자 대상. 토스 디자인 언어를 패키지 설치 없이 가이드 문서로 흡수했다.
+
+## Stack (2026-05-01 결정)
+
+- **언어**: TypeScript only
+- **모노레포**: pnpm workspace 단독
+- **웹/봇**: Next.js App Router 단일 앱(`apps/web`). 텔레그램 webhook은 `app/api/telegram/route.ts`로 같은 배포 단위에서 처리
+- **봇 라이브러리**: grammY
+- **호스팅**: Vercel Hobby (비상업용)
+- **DB**: 현재 미사용. 도입 시 캐시는 Upstash Redis, 구조화 데이터는 Neon (둘 다 Vercel Marketplace 통합)
 
 ## Repo map
 
@@ -37,10 +46,9 @@ ls docs/design-system/    # 8개 가이드 파일
 
 ## What's not here yet
 
-- 스택 (Next.js / React Native / 그 외 — 미정)
-- 첫 컴포넌트, 라우팅, 빌드 설정
+- 첫 컴포넌트, 라우팅, 실제 페이지
+- grammY 통합 코드, DART 클라이언트
 - CI / 배포 파이프라인
-- `.env.example`, 환경변수 표 (코드 작성 시 추가)
 
 ## More docs
 
